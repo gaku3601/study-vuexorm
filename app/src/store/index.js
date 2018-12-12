@@ -17,6 +17,7 @@ database.register(Comment, comments)
 
 // Create Vuex Store and register database through Vuex ORM.
 const store = new Vuex.Store({
+  strict: true,
   plugins: [VuexORM.install(database)]
 })
 
