@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexORM from '@vuex-orm/core'
-import User from './user'
-import Post from './post'
-import Comment from './comment'
+import { User, users } from './user'
+import { Post, posts } from './post'
+import { Comment, comments } from './comment'
 
 Vue.use(Vuex)
 
@@ -11,9 +11,9 @@ Vue.use(Vuex)
 const database = new VuexORM.Database()
 
 // Register Models to the database.
-database.register(User)
-database.register(Post)
-database.register(Comment)
+database.register(User, users)
+database.register(Post, posts)
+database.register(Comment, comments)
 
 // Create Vuex Store and register database through Vuex ORM.
 const store = new Vuex.Store({
